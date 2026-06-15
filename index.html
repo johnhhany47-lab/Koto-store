@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOTO — Elevated Essentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">KOTO</div>
+    <ul class="nav__links">
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__cart" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="nav__cart-count">0</span>
+      </button>
+      <button class="nav__toggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#collection" class="close-menu">Collection</a></li>
+      <li><a href="#story" class="close-menu">Story</a></li>
+      <li><a href="#contact" class="close-menu">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="hero__overlay"></div>
+      <!-- SVG fabric texture background -->
+      <svg class="hero__texture" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+            <feBlend in="SourceGraphic" mode="multiply"/>
+          </filter>
+          <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0a0a0a"/>
+            <stop offset="50%" style="stop-color:#1a1410"/>
+            <stop offset="100%" style="stop-color:#0d0b08"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="600" fill="url(#heroGrad)"/>
+        <rect width="800" height="600" fill="transparent" filter="url(#noise)" opacity="0.08"/>
+        <!-- Abstract fabric lines -->
+        <g stroke="#c9a96e" stroke-width="0.3" opacity="0.15">
+          <line x1="0" y1="150" x2="800" y2="150"/>
+          <line x1="0" y1="300" x2="800" y2="300"/>
+          <line x1="0" y1="450" x2="800" y2="450"/>
+          <line x1="200" y1="0" x2="200" y2="600"/>
+          <line x1="400" y1="0" x2="400" y2="600"/>
+          <line x1="600" y1="0" x2="600" y2="600"/>
+        </g>
+        <!-- Diagonal accent -->
+        <line x1="0" y1="600" x2="800" y2="0" stroke="#c9a96e" stroke-width="0.5" opacity="0.08"/>
+      </svg>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__eyebrow">Cairo — Est. 2024</div>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Wear</span>
+        <span class="hero__title-line hero__title-line--italic">the</span>
+        <span class="hero__title-line">Silence</span>
+      </h1>
+      <p class="hero__sub">Elevated essentials for those who let fabric speak first.</p>
+      <div class="hero__actions">
+        <a href="#collection" class="btn btn--primary">Explore Collection</a>
+        <a href="#story" class="btn btn--ghost">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Minimal &nbsp;·&nbsp; Considered &nbsp;·&nbsp; Timeless &nbsp;·&nbsp; Cairo-Made &nbsp;·&nbsp; Premium Cotton &nbsp;·&nbsp; Limited Drops &nbsp;·&nbsp;</span>
+      <span>Minimal &nbsp;·&nbsp; Considered &nbsp;·&nbsp; Timeless &nbsp;·&nbsp; Cairo-Made &nbsp;·&nbsp; Premium Cotton &nbsp;·&nbsp; Limited Drops &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- COLLECTION -->
+  <section class="collection" id="collection">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__label">SS 2025</div>
+        <h2 class="section-header__title">The Collection</h2>
+        <p class="section-header__desc">Each piece is cut from single-origin Egyptian cotton, finished by hand in Cairo.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="tops">Tops</button>
+        <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+        <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+      </div>
+
+      <div class="products" id="products">
+
+        <div class="product-card" data-category="tops">
+          <div class="product-card__img">
+            <div class="product-card__img-placeholder" style="background:#1a1a1a;">
+              <!-- SVG shirt illustration -->
+              <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 30 L30 70 L55 80 L55 200 L145 200 L145 80 L170 70 L140 30 Q120 50 100 50 Q80 50 60 30Z" fill="#2a2a2a" stroke="#c9a96e" stroke-width="1" stroke-linejoin="round"/>
+                <path d="M100 50 Q90 65 90 80" stroke="#c9a96e" stroke-width="0.8" fill="none" opacity="0.5"/>
+                <path d="M100 50 Q110 65 110 80" stroke="#c9a96e" stroke-width="0.8" fill="none" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="product-card__tag">New</div>
+            <button class="product-card__quick-add" onclick="addToCart(this)" data-name="Oversized Linen Tee" data-price="890">Add to Cart</button>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__name">Oversized Linen Tee</div>
+            <div class="product-card__meta">
+              <span class="product-card__price">EGP 890</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#0a0a0a" title="Black"></span>
+                <span class="color-dot" style="background:#f7f4ef; border: 1px solid #ddd;" title="Cream"></span>
+                <span class="color-dot" style="background:#8b7355" title="Camel"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bottoms">
+          <div class="product-card__img">
+            <div class="product-card__img-placeholder" style="background:#141414;">
+              <svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 20 L40 260 L90 260 L100 150 L110 260 L160 260 L150 20Z" fill="#1e1e1e" stroke="#c9a96e" stroke-width="1" stroke-linejoin="round"/>
+                <line x1="50" y1="20" x2="150" y2="20" stroke="#c9a96e" stroke-width="1.5"/>
+                <path d="M50 20 L55 80 L100 85 L145 80 L150 20" fill="#292929"/>
+              </svg>
+            </div>
+            <div class="product-card__tag product-card__tag--gold">Limited</div>
+            <button class="product-card__quick-add" onclick="addToCart(this)" data-name="Wide Leg Trousers" data-price="1450">Add to Cart</button>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__name">Wide Leg Trousers</div>
+            <div class="product-card__meta">
+              <span class="product-card__price">EGP 1,450</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#0a0a0a" title="Black"></span>
+                <span class="color-dot" style="background:#5a5a5a" title="Charcoal"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="outerwear">
+          <div class="product-card__img">
+            <div class="product-card__img-placeholder" style="background:#111;">
+              <svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 30 L10 90 L40 100 L40 250 L160 250 L160 100 L190 90 L160 30 Q140 55 120 60 L120 250" fill="#222" stroke="#c9a96e" stroke-width="1" stroke-linejoin="round"/>
+                <path d="M80 30 Q100 55 120 60" fill="none" stroke="#c9a96e" stroke-width="1"/>
+                <path d="M40 130 L80 130" stroke="#c9a96e" stroke-width="0.8" opacity="0.4"/>
+              </svg>
+            </div>
+            <button class="product-card__quick-add" onclick="addToCart(this)" data-name="Structured Blazer" data-price="2200">Add to Cart</button>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__name">Structured Blazer</div>
+            <div class="product-card__meta">
+              <span class="product-card__price">EGP 2,200</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#0a0a0a" title="Black"></span>
+                <span class="color-dot" style="background:#c9a96e" title="Camel"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="tops">
+          <div class="product-card__img">
+            <div class="product-card__img-placeholder" style="background:#0f0f0f;">
+              <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M70 20 Q100 10 130 20 L160 60 L160 200 L40 200 L40 60Z" fill="#1c1c1c" stroke="#c9a96e" stroke-width="1" stroke-linejoin="round"/>
+                <path d="M70 20 Q100 40 130 20" fill="none" stroke="#c9a96e" stroke-width="0.8"/>
+                <line x1="40" y1="80" x2="160" y2="80" stroke="#c9a96e" stroke-width="0.5" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="product-card__tag">New</div>
+            <button class="product-card__quick-add" onclick="addToCart(this)" data-name="Cotton Crew Neck" data-price="650">Add to Cart</button>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__name">Cotton Crew Neck</div>
+            <div class="product-card__meta">
+              <span class="product-card__price">EGP 650</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#0a0a0a" title="Black"></span>
+                <span class="color-dot" style="background:#f7f4ef; border:1px solid #ddd;" title="Cream"></span>
+                <span class="color-dot" style="background:#8b7355" title="Camel"></span>
+                <span class="color-dot" style="background:#4a4a4a" title="Slate"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bottoms">
+          <div class="product-card__img">
+            <div class="product-card__img-placeholder" style="background:#161616;">
+              <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 30 L30 220 L90 220 L100 140 L110 220 L170 220 L150 30Z" fill="#1e1e1e" stroke="#c9a96e" stroke-width="1"/>
+                <path d="M50 30 Q100 40 150 30 L160 60 L40 60Z" fill="#2a2a2a"/>
+                <line x1="100" y1="60" x2="100" y2="220" stroke="#c9a96e" stroke-width="0.5" opacity="0.2"/>
+              </svg>
+            </div>
+            <button class="product-card__quick-add" onclick="addToCart(this)" data-name="Linen Shorts" data-price="750">Add to Cart</button>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__name">Linen Shorts</div>
+            <div class="product-card__meta">
+              <span class="product-card__price">EGP 750</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#0a0a0a" title="Black"></span>
+                <span class="color-dot" style="background:#c9a96e" title="Sand"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="outerwear">
+          <div class="product-card__img">
+            <div class="product-card__img-placeholder" style="background:#0d0d0d;">
+              <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 20 L20 80 L50 90 L50 270 L150 270 L150 90 L180 80 L170 20 L110 40 L110 270" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1"/>
+                <path d="M30 20 Q70 50 90 50 L90 270" fill="none"/>
+                <path d="M170 20 Q130 50 110 50" fill="none" stroke="#c9a96e" stroke-width="0.8"/>
+                <circle cx="100" cy="100" r="4" fill="#c9a96e" opacity="0.5"/>
+                <circle cx="100" cy="130" r="4" fill="#c9a96e" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="product-card__tag product-card__tag--gold">Limited</div>
+            <button class="product-card__quick-add" onclick="addToCart(this)" data-name="Long Overcoat" data-price="3200">Add to Cart</button>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__name">Long Overcoat</div>
+            <div class="product-card__meta">
+              <span class="product-card__price">EGP 3,200</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#0a0a0a" title="Black"></span>
+                <span class="color-dot" style="background:#3d2b1f" title="Espresso"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY / MANIFESTO -->
+  <section class="story" id="story">
+    <div class="story__inner">
+      <div class="story__visual">
+        <div class="story__frame">
+          <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="500" fill="#111"/>
+            <!-- abstract fabric weave -->
+            <g opacity="0.3">
+              <line x1="0" y1="0" x2="400" y2="500" stroke="#c9a96e" stroke-width="0.5"/>
+              <line x1="50" y1="0" x2="450" y2="500" stroke="#c9a96e" stroke-width="0.3"/>
+              <line x1="100" y1="0" x2="500" y2="500" stroke="#c9a96e" stroke-width="0.3"/>
+              <line x1="0" y1="50" x2="400" y2="550" stroke="#c9a96e" stroke-width="0.3"/>
+              <line x1="0" y1="100" x2="400" y2="600" stroke="#c9a96e" stroke-width="0.3"/>
+              <line x1="400" y1="0" x2="0" y2="500" stroke="#c9a96e" stroke-width="0.5"/>
+              <line x1="350" y1="0" x2="-50" y2="500" stroke="#c9a96e" stroke-width="0.3"/>
+            </g>
+            <text x="200" y="230" text-anchor="middle" fill="#c9a96e" font-family="Cormorant Garant, serif" font-size="72" opacity="0.15">K</text>
+            <text x="200" y="310" text-anchor="middle" fill="#c9a96e" font-family="Cormorant Garant, serif" font-size="72" opacity="0.15">O</text>
+            <!-- corner marks -->
+            <line x1="0" y1="0" x2="30" y2="0" stroke="#c9a96e" stroke-width="1"/>
+            <line x1="0" y1="0" x2="0" y2="30" stroke="#c9a96e" stroke-width="1"/>
+            <line x1="400" y1="0" x2="370" y2="0" stroke="#c9a96e" stroke-width="1"/>
+            <line x1="400" y1="0" x2="400" y2="30" stroke="#c9a96e" stroke-width="1"/>
+            <line x1="0" y1="500" x2="30" y2="500" stroke="#c9a96e" stroke-width="1"/>
+            <line x1="0" y1="500" x2="0" y2="470" stroke="#c9a96e" stroke-width="1"/>
+            <line x1="400" y1="500" x2="370" y2="500" stroke="#c9a96e" stroke-width="1"/>
+            <line x1="400" y1="500" x2="400" y2="470" stroke="#c9a96e" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="story__stat-block">
+          <div class="story__stat">
+            <div class="story__stat-num">100%</div>
+            <div class="story__stat-label">Egyptian Cotton</div>
+          </div>
+          <div class="story__stat">
+            <div class="story__stat-num">Local</div>
+            <div class="story__stat-label">Cairo Artisans</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story__text">
+        <div class="story__label">The Story</div>
+        <h2 class="story__title">Fabric as a<br /><em>first language</em></h2>
+        <p class="story__body">KOTO began in a Cairo workshop with a single question: what does restraint look like when sewn into cloth? We source single-origin Egyptian long-staple cotton — the same fiber that dressed pharaohs — and cut it into pieces designed to outlast every trend.</p>
+        <p class="story__body">Every seam is hand-finished. Every pattern is drawn once and never repeated beyond its limited run. We make less, on purpose.</p>
+        <div class="story__divider"></div>
+        <blockquote class="story__quote">
+          "Luxury is not what you add.<br />It is what you refuse to remove."
+        </blockquote>
+        <a href="#collection" class="btn btn--primary" style="margin-top:2rem;">Shop the Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter__inner">
+        <div class="newsletter__text">
+          <h3 class="newsletter__title">Drop Notifications</h3>
+          <p class="newsletter__sub">Limited pieces. No restocks. Be first in line.</p>
+        </div>
+        <div class="newsletter__form">
+          <input type="email" class="newsletter__input" placeholder="your@email.com" aria-label="Email address" />
+          <button class="btn btn--primary" onclick="handleSubscribe(this)">Notify Me</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">KOTO</div>
+          <p class="footer__tagline">Elevated Essentials.<br/>Cairo-Made.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <div class="footer__col-title">Shop</div>
+            <ul>
+              <li><a href="#collection">New Arrivals</a></li>
+              <li><a href="#collection">Tops</a></li>
+              <li><a href="#collection">Bottoms</a></li>
+              <li><a href="#collection">Outerwear</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Info</div>
+            <ul>
+              <li><a href="#story">Our Story</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Connect</div>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">WhatsApp</a></li>
+              <li><a href="mailto:hello@koto.studio">hello@koto.studio</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 KOTO. All rights reserved.</span>
+        <span>Made in Cairo &nbsp;·&nbsp; Worn Everywhere</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART TOAST -->
+  <div class="toast" id="toast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toast-msg">Added to cart</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
